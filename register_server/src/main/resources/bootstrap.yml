@@ -1,0 +1,36 @@
+server:
+  port: 8761
+
+spring:
+  userA:
+    role: admin
+    name: admin  # 用户名
+    password: admin123   # 用户密码
+  userB:
+    role: user
+    name: user
+    password: user123
+
+eureka:
+  instance:
+    hostname: 127.0.0.1
+    #是否将自己的ip注册到eureka server 上。默认为false，那么将使用计算机名来代替
+    prefer-ip-address: true
+
+  client:
+    #是否向服务注册中心注册自己(如果设置为true，服务会启动报错)
+    registerWithEureka: false
+    #是否检索服务【是否从eureka server获取注册信息，单点：false;非单点：true】
+    fetchRegistry: false
+
+    #服务注册中心的配置内容，指定服务注册中心的位置
+    serviceUrl:
+      #未开启用户认证的eureka的注册中心地址
+      #defaultZone: http://127.0.0.1:8761/eureka/
+      #开启用户认证的eureka的注册中心地址
+      defaultZone: http://admin:admin123@127.0.0.1:8761/eureka/
+
+    healthcheck:
+      #用于启用eureka的健康检查：避免出现eureka client与server之间ping正常，状态为up，但是由于网络抖动导致连不上数据源，而无法正常工作
+      enabled: true
+

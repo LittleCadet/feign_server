@@ -1,0 +1,18 @@
+server:
+  port: 8762
+
+eureka:
+  client:
+    serviceUrl:
+      #defaultZone: http://127.0.0.1:8761/eureka/
+      defaultZone: http://admin:admin123@127.0.0.1:8761/eureka/
+  #是否将自己的ip注册到eureka server 上。默认为false，那么将使用计算机名来代替
+  instance:
+    prefer-ip-address: false
+    #虚拟主机名
+    virture-host-name: service-provider
+
+#注册到注册中心的应用名称
+spring:
+  application:
+    name: feign-provider

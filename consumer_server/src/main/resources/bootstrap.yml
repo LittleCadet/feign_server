@@ -1,0 +1,42 @@
+server:
+  port: 8763
+
+eureka:
+  client:
+    serviceUrl:
+      #defaultZone: http://127.0.0.1:8761/eureka/
+      defaultZone: http://admin:admin123@127.0.0.1:8761/eureka/
+  #是否将自己的ip注册到eureka server 上。默认为false，那么将使用计算机名来代替
+  instance:
+    prefer-ip-address: true
+    # 指定此客户端的ip
+    ip-address: 192.168.2.106
+
+#注册到注册中心的应用名称, 不可以使用“_”
+spring:
+  application:
+    name: feign-consumer
+
+logging:
+  level:  #Feign接口位置
+    com.feign.consumer.feign.ProviderService: DEBUG # 将Feign接口的日志级别设置成DEBUG，因为Feign的Logger.Level只对DEBUG作出响应。
+
+feign:
+  client:
+    config:
+      feignName:
+        connectTimeout: 5000  # 相当于Request.Options
+        readTimeout: 5000     # 相当于Request.Options
+        # 配置Feign的日志级别，相当于代码配置方式中的Logger
+        loggerLevel: full
+
+  hystrix:
+    # 设置为支持hystrix 【在D版本之前，这个配置项默认打开，之后D版本之后，需要主动打开】
+    enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        # 用来管理actuator【状态监控】的节点
+        include: refresh,health,info
