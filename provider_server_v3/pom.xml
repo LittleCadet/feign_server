@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 	<groupId>com.feign.provider</groupId>
-	<artifactId>provider-server</artifactId>
+	<artifactId>provider-server-v3</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>provider_server</name>
+	<name>provider_server_v3</name>
 	<description>Demo project for Spring Boot</description>
 
     <properties>
@@ -24,7 +24,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>${spring-boot.version}</version>
         </dependency>
 
         <!-- openfeign-->

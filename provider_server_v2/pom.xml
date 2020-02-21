@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 	<groupId>com.feign.provider</groupId>
-	<artifactId>feign-provider-v2</artifactId>
+	<artifactId>provider-server-v2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>feign-provider-v2</name>
+	<name>provider_server_v2</name>
 	<description>Demo project for Spring Boot</description>
 
     <properties>

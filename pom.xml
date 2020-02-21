@@ -36,6 +36,7 @@
     <module>register_server</module>
     <module>provider_server</module>
     <module>provider_server_v2</module>
+    <module>provider_server_v3</module>
     <module>consumer_server</module>
     <module>consumer_server_v2</module>
   </modules>

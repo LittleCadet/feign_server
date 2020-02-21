@@ -27,6 +27,10 @@ public class ConsumerController
     @Autowired
     private ProviderService providerService;
 
+    /**
+     * Hystrix在feign的回退的优先级高于hystrix本身的回退【hystrix本身的回退：用controller层定义的fallbackMethod】
+     * @return
+     */
     //用HystrixCommand执行回退方法，以及如果是忽略的异常，那么不执行回退方法
     @HystrixCommand(fallbackMethod = "defaultFallBack" , ignoreExceptions = {BusinessException.class} ,
                     commandProperties = {
@@ -42,6 +46,7 @@ public class ConsumerController
     public String showInfoV2(){
         return providerService.showInfo();
     }
+
 
     public String defaultFallBack(Throwable throwable){
         log.error("feign调用异常：" + throwable);

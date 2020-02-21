@@ -12,10 +12,11 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  */
 @EnableFeignClients
 @SpringBootApplication
-public class FeignConsumerApplication
+public class FeignConsumerApplicationV2
 {
+
     public static void main(String[] args)
     {
-        SpringApplication.run(FeignConsumerApplication.class,args);
+        SpringApplication.run(FeignConsumerApplicationV2.class,args);
     }
 }
