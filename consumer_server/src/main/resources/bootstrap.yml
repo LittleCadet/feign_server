@@ -18,7 +18,9 @@ spring:
     name: feign-consumer
 
 logging:
-  level:  #Feign接口位置
+  level:
+    root: INFO  #设置整个项目的日志级别
+    org.springframework.web.servlet.DispatcherServlet: DEBUG  #设置某个类的日志级别
     com.feign.consumer.feign.ProviderService: DEBUG # 将Feign接口的日志级别设置成DEBUG，因为Feign的Logger.Level只对DEBUG作出响应。
 
 feign:

@@ -34,3 +34,7 @@ eureka:
       #用于启用eureka的健康检查：避免出现eureka client与server之间ping正常，状态为up，但是由于网络抖动导致连不上数据源，而无法正常工作
       enabled: true
 
+logging:
+  level:
+    root: INFO
+    org.springframework.web.servlet.DispatcherServlet: DEBUG

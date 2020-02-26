@@ -16,3 +16,7 @@ eureka:
 spring:
   application:
     name: feign-provider
+logging:
+  level:
+    root: INFO
+    org.springframework.web.servlet.DispatcherServlet: DEBUG
